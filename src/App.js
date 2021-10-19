@@ -4,9 +4,17 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { sendChat } from './utilities/chat';
+import Signup from "./components/Signup";
+import { AuthProvider } from "./contexts/AuthContext";
+
 
 function App() {
   return (
+    <AuthProvider>
+      <Signup />
+    </AuthProvider>
+    
+    /*
     <Container className="App" fluid>
       <Row className="main-page">
         <Col className="main-page">
@@ -31,6 +39,7 @@ function App() {
         </Col>
       </Row>
     </Container>
+    */
   );
 }
 

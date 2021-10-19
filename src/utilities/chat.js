@@ -1,8 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import '../index.css';
-import App from '../App';
-import { addValue } from './database';
+//import { addValue } from './database';
 
 let current = 0;
 //let count = 0;

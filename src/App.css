@@ -58,6 +58,10 @@
   text-align: left;
 }
 
+.signup-btn {
+  max-width: 350px;
+}
+
 
 #chat-input {
   background-color: cornflowerblue;
