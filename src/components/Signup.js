@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
 import { Card, Button, Form, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link } from "react-router-dom";
@@ -35,7 +37,7 @@ export default function Signup() {
     return (
         <div>
             <Card>
-                <Card.Body>
+                <Card.Body className="card-body">
                     <h2 className='text-center mb-4'>Sign Up</h2>
                     {error && <Alert variant='danger'>{error}</Alert>}
                     <Form onSubmit={handleSubmit}>

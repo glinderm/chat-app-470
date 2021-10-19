@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
 import { Card, Button, Form, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link } from "react-router-dom";
@@ -9,7 +11,8 @@ export default function UpdateProfile() {
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();
     // const usernameRef = useRef();
-    const { currentUser, updatePassword, updateEmail, updateUsername } = useAuth();
+    // const { currentUser, updatePassword, updateEmail, updateUsername } = useAuth();
+    const { currentUser, updatePassword, updateEmail } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const history = useHistory();
@@ -48,7 +51,7 @@ export default function UpdateProfile() {
     return (
         <div>
             <Card>
-                <Card.Body>
+                <Card.Body className="card-body">
                     <h2 className='text-center mb-4'>Update Profile</h2>
                     {error && <Alert variant='danger'>{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
@@ -73,7 +76,7 @@ export default function UpdateProfile() {
                 </Card.Body>
             </Card>
             <div className='w-100 text-center mt-2'>
-                <Link to="/login">Cancel</Link>
+                <Link to="/">Cancel</Link>
             </div>
         </div>
     )

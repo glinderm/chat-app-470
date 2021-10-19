@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { Card, Button, Form, Alert } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
+import { Card, Button, Alert } from 'react-bootstrap'
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 
@@ -22,7 +24,7 @@ export default function Dashboard() {
     return (
         <>
             <Card>
-                <Card.Body>
+                <Card.Body className="card-body">
                     <h2>Profile</h2>
                     {error && <Alert variant='danger'>{error}</Alert>}
                     <p><strong>Username: </strong> {currentUser.username}</p>
@@ -30,6 +32,7 @@ export default function Dashboard() {
                     <p></p>
                     <p></p>
                     <p>
+                    <Link to="/chat-room" className="btn btn-success">Chatroom</Link>
                     <Link to="/update-profile" className="btn btn-primary">Profile Settings</Link>
                     </p>
                 </Card.Body>
