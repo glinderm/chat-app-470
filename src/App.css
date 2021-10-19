@@ -41,6 +41,24 @@
   position: absolute; top: 80px;
 }
 
+.xBtn {
+  text-align: right;
+  position: relative;
+  right: 0;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+
+.chat-row {
+  text-align: left;
+  min-width: 60vh;
+}
+
+.msg-index {
+  text-align: left;
+}
+
+
 #chat-input {
   background-color: cornflowerblue;
   min-width: 90vh;
@@ -63,5 +81,8 @@
 
 #chat-table td {
   text-align: left;
-  min-width: 50vh;
+}
+
+#chat-table th .msgIndex {
+
 }
