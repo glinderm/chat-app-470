@@ -1,18 +1,35 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { sendChat } from './utilities/chat';
 import Signup from "./components/Signup";
 import { AuthProvider } from "./contexts/AuthContext";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import Login from "./components/Login";
+import ForgotPassword from "./components/ForgotPassword";
+import PrivateRoute from "./components/PrivateRoute";
+import UpdateProfile from "./components/UpdateProfile";
+// import CreateUser from "./components/CreateUser";
 
 
 function App() {
   return (
-    <AuthProvider>
-      <Signup />
-    </AuthProvider>
+    <div>
+      <Router>
+        <AuthProvider>
+          <Switch>
+            <PrivateRoute exact path="/" component={Dashboard} />
+            <PrivateRoute path="/update-profile" component={UpdateProfile} />
+            {/* <PrivateRoute path="/createUser" component={CreateUser} /> */}
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+            <Route path="/forgot-password" component={ForgotPassword} />
+          </Switch>
+        </AuthProvider>
+      </Router>
+    </div>
     
     /*
     <Container className="App" fluid>
